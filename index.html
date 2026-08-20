@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="hi" data-lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>श्री बाबा रामदेव मोटर रिवाईडींग वर्क्स | Shree Baba Ramdev Motor Rewinding Works</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+  :root{
+    --navy:#163a54;
+    --navy-deep:#0e2c40;
+    --copper:#c97832;
+    --copper-dark:#a55e22;
+    --ink:#1c1c1a;
+    --muted:#726c5e;
+    --paper:#faf7f0;
+    --panel:#ffffff;
+    --line: rgba(28,28,26,0.1);
+    --trans: all .3s cubic-bezier(.4,0,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+  body{
+    font-family:'Hind',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.2px;}
+  .container{max-width:1120px;margin:0 auto;padding:0 1.5rem;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+
+  /* language toggle visibility */
+  html[data-lang="hi"] .lang-en{display:none;}
+  html[data-lang="en"] .lang-hi{display:none;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){.reveal{transition:none;opacity:1;transform:none;}}
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    background:rgba(250,247,240,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0;}
+  .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+  .logo img{height:34px;width:auto;}
+  .logo-text{font-family:'Rajdhani';font-weight:700;font-size:.98rem;color:var(--navy);line-height:1.15;}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--ink);text-decoration:none;font-size:.95rem;font-weight:500;transition:var(--trans);}
+  .nav-links a:hover{color:var(--copper-dark);}
+  .nav-right{display:flex;align-items:center;gap:.9rem;}
+
+  .lang-toggle{
+    display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;
+    background:var(--panel);
+  }
+  .lang-toggle button{
+    border:none;background:transparent;padding:.35rem .85rem;border-radius:999px;
+    font-family:'Rajdhani';font-weight:700;font-size:.82rem;letter-spacing:.3px;
+    cursor:pointer;color:var(--muted);transition:var(--trans);
+  }
+  .lang-toggle button.active{background:var(--navy);color:#fff;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.2rem;
+    border-radius:6px;font-family:'Rajdhani';font-weight:700;font-size:.9rem;
+    letter-spacing:.3px;text-decoration:none;cursor:pointer;transition:var(--trans);border:none;
+  }
+  .btn-primary{background:var(--copper);color:#fff;}
+  .btn-primary:hover{background:var(--copper-dark);}
+  .btn-wa{background:#25d366;color:#06210f;}
+  .btn-wa:hover{background:#22c15e;}
+  .btn-line{border:1.5px solid var(--line);color:var(--ink);background:transparent;}
+  .btn-line:hover{border-color:var(--navy);color:var(--navy);}
+
+  /* ===== Hero ===== */
+  .hero{min-height:92vh;display:flex;align-items:center;padding:8.5rem 0 3.5rem;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.2rem;align-items:center;}
+  .rating-badge{
+    display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;
+    border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:var(--muted);
+    margin-bottom:1.4rem;
+  }
+  .rating-badge .stars{color:#e0a13a;letter-spacing:1px;}
+  .hero h1{font-size:clamp(2.1rem,4.2vw,3.2rem);line-height:1.18;color:var(--navy);margin-bottom:1.1rem;}
+  .hero h1 b{color:var(--copper-dark);font-weight:700;}
+  .hero p.lead{color:var(--muted);font-size:1.02rem;margin-bottom:2rem;max-width:500px;}
+  .hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;}
+
+  .hero-image-wrap{
+    position:relative;border-radius:10px;overflow:hidden;
+    box-shadow:0 25px 50px -18px rgba(14,44,64,.35);
+  }
+  .hero-image-wrap img{width:100%;height:440px;object-fit:cover;}
+  .hero-tag{
+    position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top, rgba(14,44,64,.88), transparent);
+    padding:1.6rem 1.2rem .9rem;color:#fff;font-size:.85rem;
+  }
+
+  /* ===== Section basics ===== */
+  section{padding:5rem 0;}
+  .section-header{max-width:640px;margin:0 auto 3rem;text-align:center;}
+  .eyebrow{color:var(--copper-dark);font-size:.82rem;font-weight:600;letter-spacing:1px;display:block;margin-bottom:.5rem;}
+  .section-header h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);}
+  .section-header p{color:var(--muted);margin-top:.8rem;font-size:.95rem;}
+
+  /* ===== About ===== */
+  .about{background:var(--navy-deep);color:#e9e5da;}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center;}
+  .about-grid img{border-radius:10px;box-shadow:0 20px 40px rgba(0,0,0,.35);}
+  .about .eyebrow{color:#7fa8c4;}
+  .about h2{font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:1rem;color:#fff;}
+  .about p{color:#c6c2b6;margin-bottom:1rem;font-size:.98rem;}
+  .about-list{list-style:none;margin-top:1.4rem;display:flex;flex-direction:column;gap:.7rem;}
+  .about-list li{display:flex;align-items:center;gap:.7rem;font-size:.92rem;color:#e9e5da;}
+  .about-list li i{color:var(--copper);}
+
+  /* ===== Services ===== */
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.9rem;
+    transition:var(--trans);
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 28px rgba(20,20,15,.08);border-color:var(--copper);}
+  .card .ic{
+    width:46px;height:46px;border-radius:8px;background:var(--navy-deep);color:var(--copper);
+    display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1.1rem;
+  }
+  .card h3{font-size:1.08rem;color:var(--ink);margin-bottom:.55rem;}
+  .card p{color:var(--muted);font-size:.9rem;}
+  .card .note{
+    display:inline-block;margin-top:.9rem;font-size:.78rem;color:var(--copper-dark);
+    font-weight:600;border-top:1px solid var(--line);padding-top:.7rem;width:100%;
+  }
+
+  /* ===== Gallery ===== */
+  .gallery{background:var(--paper);}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:210px;gap:.9rem;}
+  .gallery-item{position:relative;border-radius:8px;overflow:hidden;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .gallery-item:hover img{transform:scale(1.07);}
+  .gallery-item .cap{
+    position:absolute;inset:0;background:linear-gradient(to top, rgba(14,44,64,.85), transparent 55%);
+    display:flex;align-items:flex-end;padding:.9rem;opacity:0;transition:var(--trans);
+  }
+  .gallery-item:hover .cap{opacity:1;}
+  .gallery-item .cap span{color:#fff;font-size:.86rem;font-weight:500;}
+  .gallery-item.big{grid-column:span 2;grid-row:span 2;}
+
+  /* ===== Why ===== */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+  .why-card{text-align:center;padding:1.4rem 1rem;}
+  .why-card .ic{
+    width:56px;height:56px;border-radius:50%;margin:0 auto .9rem;
+    background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+  }
+  .why-card h4{font-size:1rem;margin-bottom:.4rem;color:var(--ink);}
+  .why-card p{font-size:.85rem;color:var(--muted);}
+
+  /* ===== Contact ===== */
+  .contact-wrap{
+    background:var(--navy-deep);border-radius:14px;padding:2.8rem;
+    display:grid;grid-template-columns:1fr 1fr;gap:2.8rem;
+  }
+  .contact-info h3{font-size:1.7rem;color:#fff;margin-bottom:.6rem;}
+  .contact-info > p{color:#b9b5a8;margin-bottom:1.6rem;font-size:.92rem;}
+  .channels{display:flex;flex-direction:column;gap:.8rem;}
+  .channel{
+    display:flex;align-items:center;gap:.9rem;text-decoration:none;color:#e9e5da;
+    padding:.85rem 1rem;border-radius:8px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.06);transition:var(--trans);
+  }
+  .channel:hover{border-color:var(--copper);transform:translateX(4px);}
+  .channel .ic{
+    width:38px;height:38px;border-radius:7px;background:rgba(201,120,50,.16);
+    color:var(--copper);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;
+  }
+  .channel strong{display:block;font-family:'Rajdhani';font-size:.95rem;}
+  .channel span{font-size:.8rem;color:#a8a496;}
+  .map-box{border-radius:10px;overflow:hidden;min-height:280px;}
+  .map-box iframe{width:100%;height:100%;min-height:280px;border:none;filter:grayscale(.15) contrast(1.05);}
+
+  .whatsapp-float{
+    position:fixed;bottom:22px;right:22px;background:#25d366;color:#06210f;
+    width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:26px;box-shadow:0 8px 22px rgba(37,211,102,.45);z-index:9999;text-decoration:none;transition:var(--trans);
+  }
+  .whatsapp-float:hover{transform:scale(1.08);}
+
+  footer{background:var(--navy-deep);padding:2.4rem 0;text-align:center;color:#a8a496;}
+  footer .foot-logo{height:44px;width:auto;margin:0 auto 1rem;filter:brightness(1.4);}
+  footer p{font-size:.85rem;}
+  footer strong{color:#fff;font-size:.95rem;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid,.contact-wrap{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}
+    .gallery-item.big{grid-column:span 2;grid-row:span 1;}
+  }
+  @media (max-width:520px){.why-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <img src="image\logo-Photoroom.png" alt="logo" />
+        <span class="logo-text">
+          <span class="lang-hi">श्री बाबा रामदेव मोटर रिवाईडींग वर्क्स </span>
+          <span class="lang-en">Shree Baba Ramdev Motor Rewinding Works</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services"><span class="lang-hi">सेवाएँ</span><span class="lang-en">Services</span></a></li>
+        <li><a href="#gallery"><span class="lang-hi">वर्कशॉप</span><span class="lang-en">Workshop</span></a></li>
+        <li><a href="#about"><span class="lang-hi">परिचय</span><span class="lang-en">About</span></a></li>
+        <li><a href="#contact"><span class="lang-hi">संपर्क</span><span class="lang-en">Contact</span></a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button id="btn-hi" class="active" onclick="setLang('hi')">हिं</button>
+          <button id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="tel:+919460663051" class="btn btn-primary"><i class="fa-solid fa-phone"></i> <span class="lang-hi">कॉल करें</span><span class="lang-en">Call Now</span></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="rating-badge">
+          <span class="stars">★★★★★</span>
+          <span class="lang-hi">5.0 · Google पर 100+ समीक्षाएं</span>
+          <span class="lang-en">5.0 · 100+ Google Reviews</span>
+        </div>
+        <h1>
+          <span class="lang-hi">मोटर, पंप और पैनल — <b>रिवाईंड, रिपेयर, तैयार।</b></span>
+          <span class="lang-en">Motors, Pumps &amp; Panels — <b>Rewound, Repaired, Ready.</b></span>
+        </h1>
+        <p class="lead">
+          <span class="lang-hi">फलोदी के किसानों और उद्योगों के लिए विश्वसनीय मोटर रिवाईंडिंग, सबमर्सिबल पंप और स्टार्टर पैनल सेवाएं। असली स्पेयर पार्ट्स, ईमानदार दाम और तुरंत रिपेयर सेवा।</span>
+          <span class="lang-en">Reliable motor rewinding, submersible pumps &amp; starter panel service for Phalodi's farmers and industry. Genuine parts, honest pricing, fast repairs.</span>
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/919460663051" target="_blank" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> <span class="lang-hi">व्हाट्सएप पर बात करें</span><span class="lang-en">Chat on WhatsApp</span></a>
+          <a href="tel:+919460663051" class="btn btn-line"><i class="fa-solid fa-phone"></i> +91 94606 63051</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap reveal">
+        <img src="image\frontview.png" alt="Shree Baba Ramdev Motor Rewinding Works shopfront" />
+        <div class="hero-tag">
+          <span class="lang-hi">📍 नागौर रोड, आदर्श नगर, फलोदी</span>
+          <span class="lang-en">📍 Nagaur Road, Adarsh Nagar, Phalodi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <img src="image\Interior.png" class="reveal" alt="Shop interior" />
+    <div class="reveal">
+      <span class="eyebrow"><span class="lang-hi">हमारा परिचय</span><span class="lang-en">Who We Are</span></span>
+      <h2><span class="lang-hi">नागौर रोड पर विश्वास का नाम</span><span class="lang-en">Trusted On Nagaur Road For A Reason</span></h2>
+      <p>
+        <span class="lang-hi">श्री बाबा रामदेव मोटर रिवाईडींग वर्क्स, नागौर रोड, फलोदी में स्थित एक प्रमुख प्रतिष्ठान है। हम पिछले कई वर्षों से स्थानीय किसानों और औद्योगिक ग्राहकों को उच्च गुणवत्ता वाली मोटर रिपेयरिंग, सबमर्सिबल पंप, स्टार्टर पैनल और कृषि उपकरण उपलब्ध करा रहे हैं।</span>
+        <span class="lang-en">A well-known name on Nagaur Road, Phalodi, serving local farmers and industrial clients for years with quality motor repair, submersible pumps, starter panels and agricultural equipment.</span>
+      </p>
+      <p>
+        <span class="lang-hi">हमारी प्राथमिकता टिकाऊ स्पेयर पार्ट्स, आधुनिक तकनीक और त्वरित रिपेयर सर्विस के जरिए खेती और ट्यूबवेल से जुड़ी समस्याओं का तुरंत समाधान करना है।</span>
+        <span class="lang-en">Our priority is solving farming and tubewell issues quickly, using durable spare parts and modern repair technique.</span>
+      </p>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-check"></i> <span class="lang-hi">केवल प्रमाणित व ISI मार्क स्पेयर पार्ट्स</span><span class="lang-en">Genuine, ISI-marked spare parts only</span></li>
+        <li><i class="fa-solid fa-check"></i> <span class="lang-hi">दुकान पर मोटर टेस्टिंग व लेथ जॉब वर्क</span><span class="lang-en">In-shop motor testing &amp; lathe work</span></li>
+        <li><i class="fa-solid fa-check"></i> <span class="lang-hi">सीजन में इमरजेंसी सर्विस</span><span class="lang-en">Emergency service during peak season</span></li>
+        <li><i class="fa-solid fa-check"></i> <span class="lang-hi">पारदर्शी व उचित दाम</span><span class="lang-en">Transparent, reasonable pricing</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-hi">हम क्या देते हैं</span><span class="lang-en">What We Offer</span></span>
+      <h2><span class="lang-hi">उत्पाद एवं सेवाएं</span><span class="lang-en">Products &amp; Services</span></h2>
+      <p><span class="lang-hi">आपके बोरवेल, ट्यूबवेल या वर्कशॉप मोटर की हर ज़रूरत — एक ही छत के नीचे।</span><span class="lang-en">Everything your borewell, tubewell, or workshop motor needs — under one roof.</span></p>
+    </div>
+    <div class="services-grid">
+
+      <div class="card reveal">
+        <div class="ic"><i class="fa-solid fa-magnet"></i></div>
+        <h3><span class="lang-hi">मोटर रिवाईंडिंग एवं रिपेयरिंग</span><span class="lang-en">Motor Rewinding &amp; Repair</span></h3>
+        <p><span class="lang-hi">सबमर्सिबल, ओपन-वेल व मोनोब्लॉक मोटरों की पेशेवर रिवाईंडिंग, उच्च गुणवत्ता कॉपर वायर से।</span><span class="lang-en">Professional rewinding for submersible, open-well &amp; monoblock motors using high-quality copper wire.</span></p>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><i class="fa-solid fa-water"></i></div>
+        <h3><span class="lang-hi">सबमर्सिबल एवं पानी के पंप</span><span class="lang-en">Submersible &amp; Centrifugal Pumps</span></h3>
+        <p><span class="lang-hi">Duke और MK सहित प्रमुख ब्रांड्स के बोरवेल पंप, सिंचाई हेतु भारी क्षमता वाले मोनोब्लॉक व ओपनवेल पंप।</span><span class="lang-en">Borewell pumps from Duke &amp; MK, plus high-capacity monoblock and open-well pumps for irrigation.</span></p>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><i class="fa-solid fa-gauge"></i></div>
+        <h3><span class="lang-hi">स्टार्टर व ऑटोमेशन पैनल्स</span><span class="lang-en">Digital Starter &amp; Control Panels</span></h3>
+        <p><span class="lang-hi">Ras Tech (Sultan / PowerMax Prime) व Star-Delta / DOL पैनल्स, Cosco एम्पीयर व वोल्ट मीटर सहित।</span><span class="lang-en">Ras Tech (Sultan / PowerMax Prime) and Star-Delta / DOL panels, with Cosco ammeters &amp; voltmeters.</span></p>
+        <span class="note"><span class="lang-hi">पैनल रिपेयरिंग: +91 72979 92793</span><span class="lang-en">Panel Repairing: +91 72979 92793</span></span>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+        <h3><span class="lang-hi">डीजल जनरेटर व पॉवर बैकअप</span><span class="lang-en">Diesel Gensets &amp; Power Backup</span></h3>
+        <p><span class="lang-hi">महिंद्रा पॉवरोल व ट्रैक्टर-माउंटेड पोर्टेबल जेनसेट, विश्वसनीय फार्म पॉवर हेतु।</span><span class="lang-en">Mahindra Powerol and tractor-mounted portable gensets for reliable farm power backup.</span></p>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><i class="fa-solid fa-toolbox"></i></div>
+        <h3><span class="lang-hi">पाइप, फ्लैंज एवं हार्डवेयर</span><span class="lang-en">Borewell Fittings &amp; Hardware</span></h3>
+        <p><span class="lang-hi">हेवी-ड्यूटी डिलीवरी व कॉलम पाइप, जीआई-एमएस फ्लैंज, बेंड व रिड्यूसर स्टॉक में उपलब्ध।</span><span class="lang-en">Heavy-duty delivery &amp; column pipes, GI/MS flanges, bends and reducers in stock.</span></p>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><i class="fa-solid fa-headset"></i></div>
+        <h3><span class="lang-hi">ऑन-साइट व दुकान सपोर्ट</span><span class="lang-en">On-Site &amp; In-Shop Support</span></h3>
+        <p><span class="lang-hi">दुकान आने से पहले ही कॉल या व्हाट्सएप पर तुरंत सलाह व समस्या समाधान।</span><span class="lang-en">Quick diagnosis and advice over call or WhatsApp before you even visit the shop.</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-hi">वर्कशॉप की झलक</span><span class="lang-en">Inside The Workshop</span></span>
+      <h2><span class="lang-hi">हमारी शेल्फ व वर्कबेंच से</span><span class="lang-en">From Our Shelves &amp; Workbench</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item big reveal">
+        <img src="image\panel.png" alt="Control panel" />
+        <div class="cap"><span class="lang-hi">RAS TECH · सल्तान 70HP कंट्रोल पैनल</span><span class="lang-en">RAS TECH · Sultan 70HP Control Panel</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="image\panelwiring.png" alt="Panel wiring" />
+        <div class="cap"><span class="lang-hi">पैनल वायरिंग व असेंबली</span><span class="lang-en">Panel Wiring &amp; Assembly</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="image\pumpset.png" alt="Pump sets" />
+        <div class="cap"><span class="lang-hi">Duke व MK पंप सेट</span><span class="lang-en">Duke &amp; MK Pump Sets</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="image\pump.png" alt="Submersible pump" />
+        <div class="cap"><span class="lang-hi">सबमर्सिबल पंप व कॉलम पाइप</span><span class="lang-en">Submersible Pumps &amp; Column Pipe</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="image\pipe.png" alt="Pipe fittings" />
+        <div class="cap"><span class="lang-hi">जीआई/एमएस फ्लैंज व फिटिंग्स</span><span class="lang-en">GI/MS Flanges &amp; Fittings</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="image\meter.png" alt="Meters" />
+        <div class="cap"><span class="lang-hi">Cosco मीटर व कैपेसिटर</span><span class="lang-en">Cosco Meters &amp; Capacitors</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-hi">हमें क्यों चुनें</span><span class="lang-en">Why Choose Us</span></span>
+      <h2><span class="lang-hi">भरोसे पर बना, अनुभव से चला</span><span class="lang-en">Built On Trust, Run On Experience</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="ic"><i class="fa-solid fa-user-gear"></i></div>
+        <h4><span class="lang-hi">अनुभवी तकनीशियन</span><span class="lang-en">Experienced Technicians</span></h4>
+        <p><span class="lang-hi">दशकों का व्यावहारिक अनुभव।</span><span class="lang-en">Decades of hands-on experience.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><i class="fa-solid fa-certificate"></i></div>
+        <h4><span class="lang-hi">ओरिजिनल स्पेयर पार्ट्स</span><span class="lang-en">Genuine Spare Parts</span></h4>
+        <p><span class="lang-hi">केवल ISI मार्क कंपोनेंट्स।</span><span class="lang-en">Only certified components.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><i class="fa-solid fa-bolt"></i></div>
+        <h4><span class="lang-hi">त्वरित सर्विस</span><span class="lang-en">Prompt Service</span></h4>
+        <p><span class="lang-hi">सीजन में समयबद्ध डिलीवरी।</span><span class="lang-en">Timely delivery in peak season.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+        <h4><span class="lang-hi">उचित मूल्य</span><span class="lang-en">Fair Pricing</span></h4>
+        <p><span class="lang-hi">पारदर्शी दाम व सपोर्ट।</span><span class="lang-en">Transparent pricing &amp; support.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div class="contact-info">
+        <h3><span class="lang-hi">संपर्क करें</span><span class="lang-en">Get In Touch</span></h3>
+        <p><span class="lang-hi">मोटर रिपेयर, पंप चयन या पैनल इंस्टॉलेशन के लिए कभी भी संपर्क करें।</span><span class="lang-en">For motor repair, pump sizing, or panel installation — reach out any time.</span></p>
+        <div class="channels">
+          <a href="https://wa.me/919460663051" target="_blank" class="channel">
+            <div class="ic"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><strong><span class="lang-hi">व्हाट्सएप पर लिखें</span><span class="lang-en">WhatsApp Us</span></strong></div>
+          </a>
+          <a href="tel:+919460663051" class="channel">
+            <div class="ic"><i class="fa-solid fa-phone"></i></div>
+            <div><strong><span class="lang-hi">कॉल —अणदाराम </span><span class="lang-en">Call — Andaram</span></strong><span>+91 94606 63051</span></div>
+          </a>
+          <a href="tel:+919982585590" class="channel">
+            <div class="ic"><i class="fa-solid fa-phone"></i></div>
+            <div><strong><span class="lang-hi">कॉल —रामलाल</span><span class="lang-en">Call —Ram Lal</span></strong><span>+91 99825 85590</span></div>
+          </a>
+          <a href="tel:+917297992793" class="channel">
+            <div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div><strong><span class="lang-hi">पैनल रिपेयरिंग-अशोक</span><span class="lang-en">Panel Repairing-Ashok</span></strong><span>+91 72979 92793</span></div>
+          </a>
+          <a href="https://share.google/h2WnzUc5sE9matT8N" target="_blank" class="channel">
+            <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
+            <div><strong><span class="lang-hi">दुकान पर आएं</span><span class="lang-en">Visit Our Shop</span></strong><span>Nagaur Rd, Adarsh Nagar, Phalodi 342301</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="map-box">
+        <iframe src="https://maps.google.com/maps?q=श्री+बाबा+रामदेव+मोटर+रिवाईडींग+वर्क्स,Nagaur+Rd,Adarsh+Nagar,Phalodi,Rajasthan+342301&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/919460663051" class="whatsapp-float" target="_blank" title="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<footer>
+  <div class="container">
+    <img src="image\logo-Photoroom.png" class="foot-logo" alt="logo" />
+    <p><strong><span class="lang-hi">श्री बाबा रामदेव मोटर रिवाईडींग वर्क्स</span><span class="lang-en">Shree Baba Ramdev Motor Rewinding Works</span></strong></p>
+    <p style="margin-top:.5rem;">Nagaur Rd, Adarsh Nagar, Phalodi, Rajasthan 342301 · +91 94606 63051 / +91 99825 85590 / +91 72979 92793</p>
+    <p style="margin-top:.5rem;">© 2026 Shree Baba Ramdev Motor Rewinding Works</p>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    document.getElementById('btn-hi').classList.toggle('active', lang==='hi');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  }
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
+    });
+  }, {threshold:0.15, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
